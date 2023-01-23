@@ -18,24 +18,24 @@ task:
     cpu: 8
     memory: 32G
 
-  Load-ccache_background_script:
+  Memuat-Ccache_background_script:
      - ./script/load_ccache.sh
 
-  Git-Config:
+  Repo-pribadi_script:
      - git config --global user.name "parikk"
      - git config --global user.email "$EMAIL"
 
-  Sync-rom_script:
+  Sinkronasi-rom_script:
      - ./script/sync.sh
      
-  Build-rom_script:
+  Membangun-rom_script:
      - ./script/building.sh
      
-  Ccache-information_background_script:
+  Ccache-informasi_background_script:
      - set -e
      - export CCACHE_DIR=$WORKDIR/ccache
      - ccache -s
 
-  Upload-build_script:
+  Mengunggah-build_script:
      - ./script/ziping.sh
      
