@@ -19,6 +19,7 @@ task:
     memory: 32G
 
   Memuat-Ccache_background_script:
+     - chmod u+x script/load_ccache.sh
      - ./script/load_ccache.sh
 
   Repo-pribadi_script:
@@ -26,9 +27,11 @@ task:
      - git config --global user.email "$EMAIL"
 
   Sinkronasi-rom_script:
+     - chmod u+x script/sync.sh
      - ./script/sync.sh
      
   Membangun-rom_script:
+     - chmod u+x script/building.sh
      - ./script/building.sh
      
   Ccache-informasi_background_script:
@@ -37,5 +40,6 @@ task:
      - ccache -s
 
   Mengunggah-build_script:
+     - chmod u+x script/ziping.sh
      - ./script/ziping.sh
      
